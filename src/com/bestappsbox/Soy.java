@@ -5,9 +5,18 @@ package com.bestappsbox;
  */
 public class Soy extends CondimentDecorator {
 
+    private Beverage beverage;
     public Soy(Beverage beverage){
-        description = "Soy";
-        cost = 0.7;
         this.beverage = beverage;
+    }
+
+    @Override
+    public double cost() {
+        return beverage.cost() + 0.4;
+    }
+
+    @Override
+    public String getDescription() {
+        return beverage.getDescription() + ", Soy";
     }
 }
